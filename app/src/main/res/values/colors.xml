@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#212121</color>
+    <color name="gray">#757575</color>
+    <color name="card_background">#F8F9FA</color>
+    <!-- colors.xml -->
+    <color name="material_on_surface">#000000</color> <!-- Surface text color -->
+    <color name="material_on_surface_emphasis_medium">#99000000</color> <!-- 60% opacity -->
+    <color name="colorPrimary">#646F90</color>
+    <color name="colorPrimaryVariant">#4B5774</color> <!-- Darker variant for emphasis -->
+    <color name="colorSecondary">#D3BABA</color>
+    <color name="colorAccent">#BFAA6A</color>
+    <color name="colorBackground">#F6F5F4</color>
+    <color name="colorSurface">#E1DFDD</color>
+    <color name="colorTextPrimary">#313233</color>
+    <color name="colorError">#B7746D</color>
+</resources>

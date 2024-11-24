@@ -1,0 +1,250 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".ui.slideshow.SlideshowFragment">
+
+    <!-- Pseudo Card -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/pseudo_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="#FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/pseudo_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="8dp"
+            android:tint="#6200EE"
+        android:src="@drawable/ic_person"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/text_pseudo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Enter your Pseudo"
+            android:textColorHint="#BDBDBD"
+        android:textColor="#212121"
+        android:backgroundTint="#E0E0E0"
+        android:padding="16dp"
+        android:inputType="text"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/pseudo_icon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+
+    <!-- Numero Card -->
+<com.google.android.material.card.MaterialCardView
+android:id="@+id/numero_card"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_margin="16dp"
+app:cardCornerRadius="16dp"
+app:cardElevation="8dp"
+app:cardBackgroundColor="#FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/pseudo_card">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="8dp">
+
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/numero_icon"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:padding="8dp"
+    android:tint="#6200EE"
+android:src="@drawable/ic_phone"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+<EditText
+    android:id="@+id/text_numero"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Enter your Phone Number"
+    android:textColorHint="#BDBDBD"
+android:textColor="#212121"
+android:backgroundTint="#E0E0E0"
+android:padding="16dp"
+android:inputType="phone"
+android:textSize="16sp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@id/numero_icon"
+app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Longitude Card -->
+<com.google.android.material.card.MaterialCardView
+android:id="@+id/longitude_card"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_margin="16dp"
+app:cardCornerRadius="16dp"
+app:cardElevation="8dp"
+app:cardBackgroundColor="#FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/numero_card">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="8dp">
+
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/longitude_icon"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:padding="8dp"
+    android:tint="#6200EE"
+android:src="@drawable/ic_pos"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+<EditText
+    android:id="@+id/text_longitude"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Enter Longitude"
+    android:textColorHint="#BDBDBD"
+android:textColor="#212121"
+android:backgroundTint="#E0E0E0"
+android:padding="16dp"
+android:inputType="numberDecimal"
+android:textSize="16sp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@id/longitude_icon"
+app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Latitude Card -->
+<com.google.android.material.card.MaterialCardView
+android:id="@+id/latitude_card"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:layout_margin="16dp"
+app:cardCornerRadius="16dp"
+app:cardElevation="8dp"
+app:cardBackgroundColor="#FFFFFF"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/longitude_card">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:padding="8dp">
+
+<androidx.appcompat.widget.AppCompatImageView
+    android:id="@+id/latitude_icon"
+    android:layout_width="40dp"
+    android:layout_height="40dp"
+    android:padding="8dp"
+    android:tint="#6200EE"
+android:src="@drawable/ic_pos"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toTopOf="parent" />
+
+<EditText
+    android:id="@+id/text_latitude"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="Enter Latitude"
+    android:textColorHint="#BDBDBD"
+android:textColor="#212121"
+android:backgroundTint="#E0E0E0"
+android:padding="16dp"
+android:inputType="numberDecimal"
+android:textSize="16sp"
+app:layout_constraintBottom_toBottomOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+app:layout_constraintStart_toEndOf="@id/latitude_icon"
+app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Buttons -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/back_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#6200EE"
+    android:textColor="#FFFFFF"
+    android:text="Back"
+    app:layout_constraintEnd_toStartOf="@id/add_btn"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#03DAC5"
+    android:textColor="#FFFFFF"
+    android:text="Add"
+    app:layout_constraintStart_toEndOf="@id/back_btn"
+    app:layout_constraintEnd_toStartOf="@id/map_btn"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/map_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#6200EE"
+    android:textColor="#FFFFFF"
+    android:text="Map"
+    app:layout_constraintStart_toEndOf="@id/add_btn"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
