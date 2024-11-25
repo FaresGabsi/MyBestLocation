@@ -10,14 +10,15 @@
     <color name="gray">#757575</color>
     <color name="card_background">#F8F9FA</color>
     <!-- colors.xml -->
-    <color name="material_on_surface">#000000</color> <!-- Surface text color -->
-    <color name="material_on_surface_emphasis_medium">#99000000</color> <!-- 60% opacity -->
-    <color name="colorPrimary">#646F90</color>
-    <color name="colorPrimaryVariant">#4B5774</color> <!-- Darker variant for emphasis -->
-    <color name="colorSecondary">#D3BABA</color>
-    <color name="colorAccent">#BFAA6A</color>
-    <color name="colorBackground">#F6F5F4</color>
-    <color name="colorSurface">#E1DFDD</color>
-    <color name="colorTextPrimary">#313233</color>
-    <color name="colorError">#B7746D</color>
+    <color name="material_on_surface">#1A1A1A</color> <!-- Surface text color -->
+    <color name="material_on_surface_emphasis_medium">#991A1A1A</color> <!-- 60% opacity -->
+    <color name="colorPrimary">#3A86FF</color>
+    <color name="colorPrimaryVariant">#2657C5</color> <!-- Darker variant for emphasis -->
+    <color name="colorSecondary">#FFBE0B</color>
+    <color name="colorAccent">#FB5607</color>
+    <color name="colorBackground">#F0F4F8</color>
+    <color name="colorSurface">#E0E7EF</color>
+    <color name="colorTextPrimary">#202124</color>
+    <color name="colorError">#D90429</color>
+
 </resources>

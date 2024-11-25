@@ -33,31 +33,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private ActivityMapsBinding binding;
     private double longitude, latitude;
     private Marker marker;
-    private void setUpMapTypeSelector() {
-        findViewById(R.id.btn_normal).setOnClickListener(v -> googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL));
-        findViewById(R.id.btn_satellite).setOnClickListener(v -> googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE));
-        findViewById(R.id.btn_hybrid).setOnClickListener(v -> googleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID));
-        findViewById(R.id.btn_terrain).setOnClickListener(v -> googleMap.setMapType(GoogleMap.MAP_TYPE_TERRAIN));
-    }
-    private void searchLocation(String location) {
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            // Get the location from user input
-            List<Address> addresses = geocoder.getFromLocationName(location, 1);
-            if (addresses != null && !addresses.isEmpty()) {
-                Address address = addresses.get(0);
-                LatLng latLng = new LatLng(address.getLatitude(), address.getLongitude());
 
-                // Update the marker position and move the camera
-                marker.setPosition(latLng);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 15f));
-            } else {
-                Log.e("MapsActivity", "Location not found!");
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,15 +49,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        // Handle search button click
-        Button btnSearch = findViewById(R.id.btn_search);
-        btnSearch.setOnClickListener(v -> {
-            EditText etSearch = findViewById(R.id.et_search);
-            String location = etSearch.getText().toString();
-            if (!location.isEmpty()) {
-                searchLocation(location);
-            }
-        });
+
     }
     @Override
     public void onMapReady(@NonNull GoogleMap googleMap) {
@@ -95,7 +64,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         marker = googleMap.addMarker(options);
         googleMap.setOnMarkerClickListener(this);
-        setUpMapTypeSelector();
+
 
     }
 
