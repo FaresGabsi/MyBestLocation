@@ -73,9 +73,15 @@ public class HomeFragment extends Fragment {
         // Request location permissions
         ActivityCompat.requestPermissions(
                 requireActivity(),
-                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION,
+                        Manifest.permission.ACCESS_COARSE_LOCATION,
+                        Manifest.permission.INTERNET
+
+                },
+
                 1
         );
+
 
         return root;
     }

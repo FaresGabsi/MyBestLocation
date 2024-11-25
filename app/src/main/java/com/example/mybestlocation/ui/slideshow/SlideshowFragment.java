@@ -1,4 +1,6 @@
 package com.example.mybestlocation.ui.slideshow;
+import static android.app.Activity.RESULT_OK;
+
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -72,20 +74,25 @@ public class SlideshowFragment extends Fragment implements LocationListener {
         });
 
         // Handle "Save Position" button click
+        // Handle "Save Position" button click
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (isAdded()) { // Check if the fragment is currently added to its activity
 
-                    // Validate that all fields are not empty
+                    // Validate that all fields are filled
                     String longitude = binding.textLongitude.getText().toString().trim();
                     String latitude = binding.textLatitude.getText().toString().trim();
                     String numero = binding.textNumero.getText().toString().trim();
                     String pseudo = binding.textPseudo.getText().toString().trim();
 
                     if (longitude.isEmpty() || latitude.isEmpty() || numero.isEmpty() || pseudo.isEmpty()) {
-                        // If any field is empty, show an error message
-                        Toast.makeText(requireContext(), "Tous les champs doivent être remplis !", Toast.LENGTH_SHORT).show();
+                        // Show an alert dialog if any field is empty
+                        new AlertDialog.Builder(requireContext())
+                                .setTitle("Champs manquants")
+                                .setMessage("Tous les champs doivent être remplis avant de continuer.")
+                                .setPositiveButton("OK", null)
+                                .show();
                     } else {
                         // Create the confirmation dialog
                         new AlertDialog.Builder(requireContext())
@@ -133,9 +140,10 @@ public class SlideshowFragment extends Fragment implements LocationListener {
                 Intent maps = new Intent(getActivity(), MapsActivity.class);
                 maps.putExtra("longitude", binding.textLongitude.getText().toString());
                 maps.putExtra("latitude", binding.textLatitude.getText().toString());
-                startActivityForResult(maps, 1);
+                startActivityForResult(maps, 1); // Request code 1
             }
         });
+
 
         return root;
     }
@@ -143,18 +151,20 @@ public class SlideshowFragment extends Fragment implements LocationListener {
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == 1) {
-            String dataString = data.getDataString();
-            Log.e("position_received:", dataString);
-            String[] parts = dataString.split("&");
-            // Extract the values from the parts
-            String marker_lat = parts[0].split("=")[1];
-            String marker_lng = parts[1].split("=")[1];
-            binding.textLatitude.setText(marker_lat);
-            binding.textLongitude.setText(marker_lng);
-        }
 
+        if (resultCode == RESULT_OK && data != null) {
+            // Retrieve the latitude and longitude from the returned intent
+            String latitude = data.getStringExtra("latitude");
+            String longitude = data.getStringExtra("longitude");
+
+            // Update the UI with the retrieved values
+            binding.textLatitude.setText(latitude);
+            binding.textLongitude.setText(longitude);
+
+            Log.e("SlideshowFragment", "Updated Lat: " + latitude + ", Lng: " + longitude);
+        }
     }
+
 
 
     // show realtime location
